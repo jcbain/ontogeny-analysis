@@ -24,11 +24,4 @@ growth<-within(growth,{
 })
 
 
-plot(growth$age,growth$cm)
-plot(growth$age,growth$kgs)
-plot(growth$cm,growth$kgs)
-
-
-r_all<-lmer(r2d4d~cm+cmsq+sex+(1|momid/id),data=growth,REML=FALSE)
-summary(r_all)
 
