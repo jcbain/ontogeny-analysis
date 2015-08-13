@@ -1,6 +1,10 @@
 setwd("~/Dropbox/Growth Data/Growth")
 growth<-read.csv("growth.csv", header=T)
 
+library(lme4)
+library(ggplot2)
+library(dplyr)
+
 #Clean up data
 growth<-growth[,-c(60:123)]
 growth<-growth[,-c(2,5,6,7,13,14,15,16,18,19,20,21,22,23,24,25,26,27,28,30,31,32,33,34,36,37,38,39,
@@ -16,9 +20,6 @@ growth$cmsq<-growth$cm^2
 plot(growth$age,growth$cm)
 plot(growth$age,growth$kgs)
 plot(growth$cm,growth$kgs)
-
-require(lme4)
-require(ggplot2)
 
 
 r_all<-lmer(r2d4d~cm+cmsq+sex+(1|momid/id),data=growth,REML=FALSE)
