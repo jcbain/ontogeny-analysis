@@ -23,5 +23,5 @@ growth<-within(growth,{
   cm3<-growth$cm^3
 })
 
-
+# begin evaluation of data (ie. simple histograms by age and sex)
 
