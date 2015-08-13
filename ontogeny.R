@@ -1,4 +1,4 @@
-setwd("~jamesbain/Dropbox/Growth Data/Growth")
+setwd("~/Dropbox/Growth Data/Growth")
 growth<-read.csv("growth.csv", header=T)
 
 #Clean up data
@@ -19,7 +19,7 @@ plot(growth$cm,growth$kgs)
 
 require(lme4)
 require(ggplot2)
-require(SSgompertz)
+
 
 r_all<-lmer(r2d4d~cm+cmsq+sex+(1|momid/id),data=growth,REML=FALSE)
 summary(r_all)
