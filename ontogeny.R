@@ -24,6 +24,12 @@ growth<-within(growth,{
   age_year<-round(growth$age)
 })
 
-ggplot(growth,aes(x = age_year, y = cm, color = factor(sex))) + geom_point()
+# height by age year
+ggplot(growth,aes(x = age_year, y = cm, color = factor(sex))) + geom_point() + 
+  stat_smooth(method = loess, se = FALSE) 
+
+# height by exact age
+ggplot(growth,aes(x = age, y = cm, color = factor(sex))) + geom_point() + 
+  stat_smooth(method = loess, se = FALSE)
 
 
