@@ -21,7 +21,9 @@ growth<-within(growth,{
   l2d4d<-growth$l2d/growth$l4d
   cm2<-growth$cm^2
   cm3<-growth$cm^3
+  age_year<-round(growth$age)
 })
 
-# begin evaluation of data (ie. simple histograms by age and sex)
+ggplot(growth,aes(x = age_year, y = cm, color = factor(sex))) + geom_point()
+
 
