@@ -24,7 +24,7 @@ growth<-within(growth,{
   age_year<-round(growth$age)
   age2<-growth$age^2
   age3<-growth$age^3
-  measmet<- as.factor(ifelse(YEAR>2004,1,0))
+  measmet<- as.factor(ifelse(year>2004,1,0)) # 1 = imageJ software; 0 = digital calipers
 })
 
 ## sample plots for quick visualization
