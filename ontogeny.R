@@ -24,7 +24,10 @@ growth<-within(growth,{
   age_year<-round(growth$age)
   age2<-growth$age^2
   age3<-growth$age^3
+  measmet<- as.factor(ifelse(YEAR>2004,1,0))
 })
+
+## sample plots for quick visualization
 
 # height by age year
 ggplot(growth,aes(x = age_year, y = cm, color = factor(sex))) + geom_point() + 
@@ -35,6 +38,6 @@ ggplot(growth,aes(x = age, y = cm, color = factor(sex))) + geom_point() +
   stat_smooth(method = loess, se = FALSE)
 
 
-# include lattice like plots
+
 
 
