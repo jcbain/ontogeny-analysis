@@ -34,6 +34,7 @@ ggplot(growth,aes(x = age_year, y = cm, color = factor(sex))) + geom_point() +
 ggplot(growth,aes(x = age, y = cm, color = factor(sex))) + geom_point() + 
   stat_smooth(method = loess, se = FALSE)
 
+
 # include lattice like plots
 
 
